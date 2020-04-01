@@ -20,14 +20,14 @@ describe('index', () => {
     })
   })
 
-  it('calls console.log("enter you pin")', done => {
+  it('calls console.log("Halp")', done => {
     const spy = expect.spyOn(console, 'log').andCallThrough()
 
     jsdom.env(html, [src], {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
     }, (err, window) => {
       expect(spy).toHaveBeenCalled('expected console.log to have been called')
-      console.log.restore()
+      console.log.restore("warn")
       done()
     })
   })
