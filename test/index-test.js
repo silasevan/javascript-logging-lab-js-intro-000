@@ -27,7 +27,7 @@ describe('index', () => {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
     }, (err, window) => {
       expect(spy).toHaveBeenCalled('expected console.log to have been called')
-      console.log.restore("warn")
+      console.log.restore()
       done()
     })
   })
